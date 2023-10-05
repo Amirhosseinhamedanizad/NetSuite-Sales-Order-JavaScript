@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Customer Record</title>
+</head>
+<body>
+    <h1>Create Customer Record</h1>
+    <form id="customerForm">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" required><br><br>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" required><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required><br><br>
+
+        <button type="button" id="createCustomer">Create Customer</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+        // Simulated function to create a customer record in NetSuite
+        function createCustomerRecord(firstName, lastName, email) {
+            // Simulate the API call to NetSuite (replace with actual API call)
+            // For demonstration purposes, we'll just display the data.
+            var customerData = {
+                firstName: firstName,
+                lastName: lastName,
+                email: email
+            };
+
+            // Display the created customer data
+            document.getElementById('output').innerHTML = '<h2>Customer Record Created:</h2>' +
+                '<p>First Name: ' + customerData.firstName + '</p>' +
+                '<p>Last Name: ' + customerData.lastName + '</p>' +
+                '<p>Email: ' + customerData.email + '</p>';
+        }
+
+        // Event listener for the "Create Customer" button
+        document.getElementById('createCustomer').addEventListener('click', function() {
+            var firstName = document.getElementById('firstName').value;
+            var lastName = document.getElementById('lastName').value;
+            var email = document.getElementById('email').value;
+
+            // Call the function to create a customer record
+            createCustomerRecord(firstName, lastName, email);
+        });
+    </script>
+</body>
+</html>
